@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.DataDriven.LoginTestCases">
+      <class name="testNG.ParrallelTesting">
         <methods>
-          <include name="logincorrectTestCases"/>
+          <include name="openBing"/>
+          <include name="openGoogle"/>
         </methods>
-      </class> <!-- com.DataDriven.LoginTestCases -->
+      </class> <!-- testNG.ParrallelTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

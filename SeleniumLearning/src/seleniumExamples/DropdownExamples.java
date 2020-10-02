@@ -13,7 +13,7 @@ public class DropdownExamples {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver_win32\\chromedriver.exe");
+
 	    
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -23,6 +23,16 @@ System.setProperty("webdriver.chrome.driver", "C:\\Drivers\\chromedriver_win32\\
 		
 		WebElement dropdown1 =driver.findElement(By.id("dropdown1"));
 		Select select = new Select(dropdown1);
+		for(int i=0;i<5;i++) {
+			select.selectByIndex(i);
+			List<WebElement> trs =driver.findElements(By.xpath("//table//tr"));
+			for(int j=0;j<trs.size();j++) {
+				String col4 = trs.get(j).findElement(By.xpath("//td[4]")).getText();
+				if(col4.equals("pending"))
+					trs.get(j).findElement(By.xpath("//td[5]")).click();
+			}
+			
+		}
 	    select.selectByIndex(1);
 	    Thread.sleep(3000);
 	    select.selectByValue("2");

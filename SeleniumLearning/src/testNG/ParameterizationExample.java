@@ -8,6 +8,6 @@ public class ParameterizationExample {
 	@Test
 	@Parameters("Name")
 	public void printName(String name) {
-		System.out.println("Name isv = "+ name);
+		System.out.println("Name is  = "+ name);
 	}
 }
